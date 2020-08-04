@@ -1,16 +1,14 @@
-### Hi there 👋
+🌍 GISer 👨🏻‍💻
 
-<!--
-**lkcozy/lkcozy** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Learning how to innovate with map 🗺
 
-Here are some ideas to get you started:
+## Github Stats
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+![](https://github-readme-stats.vercel.app/api?username=lkcozy&show_icons=true&theme=tokyonight&hide_title=true)
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lkcozy&layout=compact&theme=tokyonight)
+
+## WakaTime Stats
+
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
