@@ -1,11 +1,6 @@
 name: Waka Readme
 
 on:
-  push:
-    branches:
-      - master
-  repository_dispatch:
-    types: test
   schedule:
     # Runs at 12:30am MST
     - cron: "30 17 * * *"
