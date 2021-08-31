@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "esbenp.prettier-vscode",
+    "mrmlnc.vscode-scss",
+    "DavidAnson.vscode-markdownlint",
+    "msjsdiag.debugger-for-chrome",
+    "aaron-bond.better-comments",
+    "formulahendry.auto-rename-tag",
+    "pomber.git-file-history",
+    "eamodio.gitlens",
+    "wix.vscode-import-cost",
+    "streetsidesoftware.code-spell-checker",
+    "tabnine.tabnine-vscode",
+    "coenraads.bracket-pair-colorizer-2",
+    "steoates.autoimport",
+    "formulahendry.code-runner",
+    "sonarsource.sonarlint-vscode"
+  ]
+}

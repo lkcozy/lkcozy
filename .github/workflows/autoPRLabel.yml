@@ -1,0 +1,19 @@
+name: PR Label
+
+on: pull_request
+jobs:
+  size-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pr-size-diff-label
+        uses: 'lkcozy/size-label-action@master'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          IGNORED: ".*\n!.gitignore\nyarn.lock/**"
+  label-title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: label pr based on pr title
+        uses: srvaroa/labeler@master
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'

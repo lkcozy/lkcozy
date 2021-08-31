@@ -1,5 +1,13 @@
 #!/bin/bash
-# script to run screencapture every one second
+
+######################################################################
+# screncap.sh
+#
+# SYNOPSIS: Run screencapture every one second
+#
+# Requires: N/A
+#
+######################################################################
 
 screenshot="$(which screencapture) -x -m -C"
 freq=30     #take a screenshot every 30 seconds

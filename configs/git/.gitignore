@@ -1,0 +1,124 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js'
+
+# ignore npm's lockfile as we use yarn
+package-lock.json
+
+# testing
+/coverage
+# cypress videos
+/tests/e2e/videos
+*.mp4
+# cypress screenshots
+/tests/e2e/screenshots
+# auth tokens for cypress
+cypress.env.json
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.*
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# storybook
+/storybook-static
+
+# idea
+/.idea
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Log Files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local Env Files
+.env.local
+.env.*.local
+
+# Codeship local environment variables
+*.codeship.*.local
+*.codeship.*.decrypted
+# Codeship AES key
+codeship.aes
+
+### System Files ###
+.DS_Store
+Thumbs.db
+ehthumbs.db
+# KDE directory preferences
+.directory
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+# Folder config file
+Desktop.ini
+# Windows shortcuts
+*.lnk
+
+### Editors ###
+
+### SublimeText ###
+# cache files for sublime text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# workspace files are user-specific
+*.sublime-workspace
+
+# project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using SublimeText
+# *.sublime-project
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### WebStorm/IntelliJ ###
+/.idea
+modules.xml
+*.ipr
+
+### Vim ###
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+### Emacs ###
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+.codeship.env
+
+.tmp*
+.terraform
+infrastructure/modules
+
+public/tmp/*
+public/config/config.json
+scripts/plan-local.sh
