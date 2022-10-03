@@ -6,18 +6,22 @@
 
 # From https://askubuntu.com/questions/837916/convert-mp4-to-mp3-using-shell-script
 
-videos=$(find . -name '*.mp4')
+# -o means “OR”
+videos=$(find . -type f \( -name '*.mp4' -o -name '*.flv' -o -name '*.m4a' \))
 sounds=()
 sampleRate="48000"
+processedFolder="processed"
+
 for video in $videos; do
-    sound=${video%.mp4}.mp3
+    sound=${video%.*}.mp3
     if [ ! -f "$sound" ]; then
         ffmpeg -i "$video" -vn -acodec libmp3lame -ac 2 -qscale:a 4 -ar "$sampleRate" "$sound"
         sounds+=("$sound")
+        mv "$video" $processedFolder
     fi
 done
 
-echo "Converted ${#sounds[@]} vidoes"
+echo "Converted ${#sounds[@]}/${#videos[@]} vidoes"
 
 for i in "${sounds[*]}"; do
     echo -e "$i\n"
