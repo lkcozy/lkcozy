@@ -2,14 +2,12 @@ import fitz
 import re
 import os
 import shutil
-from os import path
 from glob import glob
-from re import sub
 from pathlib import Path
 
 
 def find_files_by_extension(dir_path, extension):
-    return glob(path.join(dir_path, "*.{}".format(extension)))
+    return glob(os.path.join(dir_path, "*.{}".format(extension)))
 
 
 def get_file_name_no_extension(path):
@@ -18,9 +16,9 @@ def get_file_name_no_extension(path):
 
 def snake_case(s):
     return '_'.join(
-        sub('([A-Z][a-z]+)', r' \1',
-            sub('([A-Z]+)', r' \1',
-                s.replace('-', ' '))).split()).lower()
+        re.sub('([A-Z][a-z]+)', r' \1',
+               re.sub('([A-Z]+)', r' \1',
+                      s.replace('-', ' '))).split()).lower()
 
 
 pdf_file_path = 'test.pdf'
