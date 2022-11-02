@@ -20,4 +20,4 @@ The processed PDF files will be moved to the folder `processed`.
 
 ## [PyMuPDF](https://pymupdf.readthedocs.io/en/latest/tutorial.html)
 
-PyMuPDF adds Python bindings and abstractions to MuPDF, a lightweight PDF, XPS, and eBook viewer, renderer, and toolkit. Both PyMuPDF and MuPDF are maintained and developed by Artifex Software, Inc.
+PyMuPDF adds Python bindings and abstractions to MuPDF, a lightweight PDF, XPS, and eBook viewer, renderer, and toolkit.
