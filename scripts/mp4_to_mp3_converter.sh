@@ -1,13 +1,15 @@
 #!/bin/bash
+types=("mp4" "m4a" "wav" "flv" "mov")
 
-# TODO: enable multiprocessing
-# TODO: convert to zx
-# TODO: Converting mp4 to mp3 after adding a new file with macos folder action
+cmd="find . "
 
-# From https://askubuntu.com/questions/837916/convert-mp4-to-mp3-using-shell-script
+for type in "${types[@]}"; do
+    cmd+="-name '*.$type' -o " # -o means “OR”
+done
 
-# -o means “OR”
-videos=$(find . -type f \( -name '*.mp4' -o -name '*.flv' -o -name '*.m4a' \))
+# Remove the last " -o " from the command string
+cmd=${cmd% -o *}
+videos=$(eval $cmd)
 sounds=()
 sampleRate="48000"
 processedFolder="processed"
