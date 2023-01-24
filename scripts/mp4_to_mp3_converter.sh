@@ -1,4 +1,14 @@
 #!/bin/bash
+
+# From https://askubuntu.com/questions/837916/convert-mp4-to-mp3-using-shell-script
+
+# IFS: Internal Field Separator
+# determines how fields (or items) within a string are separated.
+# by default, Bash will treat any combination of space, tab, or newline characters as a separator when splitting strings.
+OIFS=$IFS
+IFS=$'\n'
+
+# From https://askubuntu.com/questions/837916/convert-mp4-to-mp3-using-shell-script
 types=("mp4" "m4a" "wav" "flv" "mov")
 
 cmd="find . "
@@ -9,25 +19,37 @@ done
 
 # Remove the last " -o " from the command string
 cmd=${cmd% -o *}
-videos=$(eval $cmd)
+videos=$(eval "$cmd")
 sounds=()
 sampleRate="48000"
 processedFolder="processed"
+keepOriginal=true
+
+declare -i video_count=0
 
 for video in $videos; do
-    sound=${video%.*}.mp3
+    sound=${video/ (enhanced)/}
+    sound=${sound%.*}.mp3
+    video_count+=1
     if [ ! -f "$sound" ]; then
         ffmpeg -i "$video" -vn -acodec libmp3lame -ac 2 -qscale:a 4 -ar "$sampleRate" "$sound"
         sounds+=("$sound")
-        mv "$video" $processedFolder
+        if [ "$keepOriginal" = true ]; then
+            mv "$video" $processedFolder
+        else
+            rm "$video"
+        fi
     fi
 done
 
-echo "Converted ${#sounds[@]}/${#videos[@]} vidoes"
+echo "Converted ${#sounds[@]}/$video_count vidoes"
 
-for i in "${sounds[*]}"; do
-    echo -e "$i\n"
+for s in $sounds; do
+    echo -e "$s\n"
 done
+
+# restore $IFS
+IFS=$OIFS
 
 # find . -name "*.mp4" -exec bash -c 'ffmpeg -i "$1" -vn -acodec libmp3lame -ac 2 -qscale:a 4 -ar 48000 "${1%.mp4}".mp3' - '{}' \;
 
