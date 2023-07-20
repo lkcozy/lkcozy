@@ -1,7 +1,7 @@
 #!/usr/bin/env zx
 
 // Define an array of Bilibili video URLs
-const urls = ["https://www.bilibili.com/video/BV17P4y1B7YL/"];
+const urls = [];
 
 const options = ["--audio-only", "--skip-cover"];
 
