@@ -10,6 +10,15 @@ Download only the audio part of the video from bilibili.
 
 ## Usage
 
+Download the latest [BBDown](https://github.com/nilaoda/BBDown/releases)
+
+```zsh
+curl -Lk [url] -o temp.zip && unzip -o temp.zip && chmod +x BBDOWN && rm temp.zip
+```
+
+> `-L` follows any redirects that occur while trying to download the file.
+> `-k` allows downloading from insecure HTTPS connections if needed.
+
 Make a script file executable
 
 ```zsh
