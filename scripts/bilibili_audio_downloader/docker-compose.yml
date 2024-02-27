@@ -1,0 +1,6 @@
+version: "3.8"
+
+services:
+  vidoe_downloader:
+    container_name: bilibili_audio_downloader
+    build: .
