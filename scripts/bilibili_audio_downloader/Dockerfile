@@ -1,5 +1,5 @@
 # Start from a slim version of the official Node Docker image
-FROM node:lts-bookworm-slim
+FROM node:21-slim
 
 # Update system dependencies and install basic tools in a single step to reduce layer size
 # Remove the /var/lib/apt/lists/* directory after installing packages to reduce the image size by cleaning up cached package data.
@@ -21,6 +21,8 @@ COPY ./BBDown_1.6.1_linux-x64.zip /app/BBDown.zip
 COPY ./batchAudio.mjs /app/batchAudio.mjs
 
 RUN unzip -o BBDown.zip && chmod +x BBDown && rm BBDown.zip && rm -rf download
+
+RUN npm install -g --unsafe-perm zx
 
 # Make the script executable
 RUN chmod +x /app/batchAudio.mjs

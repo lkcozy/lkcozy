@@ -1,6 +1,9 @@
 {
   "devDependencies": {
     "jq": "^1.7.2",
-    "zx": "^7.2.3"
+    "zx": "^8.0.1"
+  },
+  "engines": {
+    "node": ">=21"
   }
 }
