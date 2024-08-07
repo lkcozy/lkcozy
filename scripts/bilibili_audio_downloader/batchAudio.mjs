@@ -15,7 +15,7 @@ const options = [
 ];
 
 async function downloadLatestBBDown() {
-  const currentVersion = "1.6.0";
+  const currentVersion = "1.6.2";
   const targetOperateSystem = "osx-x64";
   const releaseUrl =
     "https://api.github.com/repos/nilaoda/BBDown/releases/latest";
